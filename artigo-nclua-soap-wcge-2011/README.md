@@ -1,0 +1,3 @@
+[![Creative Commons](https://img.shields.io/badge/license-CC--BY--NC--ND%204.0-orange.svg?style=flat-square)](http://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+[Artigo](wcge-artigo-nclua-soap.pdf) sobre o projeto [NCLua SOAP](https://github.com/manoelcampos/NCLuaSOAP/), aprovado no Workshop de Computação Aplicada em Governo Eletrônico (WCGE) em 2011 no Brasil. Informações sobre a aceitação do artigo podem ser conferidas na [página do evento](http://www4.serpro.gov.br/wcge2011/artigos-selecionados).
