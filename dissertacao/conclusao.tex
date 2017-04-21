@@ -1,0 +1,123 @@
+\chapter{Conclusões e Trabalhos Futuros} \label{cap:conclusao}
+
+\section{Conclusões}
+
+\added{As implementações apresentadas nesta dissertação são todas originais, por
+não haver nenhuma outra implementação (pelo menos de código aberto)
+para o sub-sistema Ginga-NCL dos protocolos HTTP e SOAP, de
+um \textit{framework} de componentes gráficos e de aplicações de
+\textit{T-Commerce}. Tais implementações permitem o desenvolvimento
+de aplicações dos mais variados tipos para o Ginga-NCL, alavancando
+o desenvolvimento de aplicações interativas para o SBTVD (ISDB-TB).}
+
+\input{artigo-ncluasoap-conclusao}
+
+%\textbf{APRESENTAR CONCLUSÕES A AVALIAÇÕES DE RESULTADOS DA ARQUITETURA E DA APP DE T-COMMERCE}
+
+A arquitetura proposta serve de base para o desenvolvimento de serviços de \textit{T-Commerce} para o SBTVD,
+mostrando como diversos serviços podem ser integrados em uma única arquitetura para um propósito final.
+Tal arquitetura também serve como um estudo de caso dos percalços enfrentados para a elaboração
+de um ambiente de desenvolvimento e testes de aplicações para o SBTVD, mostrando
+as ferramentas necessárias para isto.
+
+As análises de desempenho apresentadas dos protocolos implementados mostraram como a solução proposta
+é eficiente em uso de processador e memória RAM, sendo uma solução ideal para uso em 
+ambientes restritos de recursos, como os \textit{Set-top Boxes}.
+
+Os protocolos implementados são a base da integração entre \textit{Web} e TV
+e estão sendo bastante úteis em diversos outros trabalhos, como apresentado
+no Capítulo \ref{cap:ncluasoap}, mostrando como os resultados alcançados se tornaram
+importantes para a comunidade de TV Digital no Brasil e na América Latina, 
+onde quase todos os países já adotaram o ISDB-TB.
+
+A aplicação de \textit{T-Commerce} desenvolvida delineia o processo de desenvolvimento
+de aplicações que fogem do trivial, mostrando como aplicar recursos como orientação
+a objetos na linguagem Lua, \added{uso do canal de retorno/interatividade no SBTVD, 
+uso de arquivos XML e arquivos de dados em formato Lua, além de outros recursos}. 
+O uso do \textit{framework} LuaOnTV para construção
+de interfaces gráficas de usuário é bastante flexível e dá suporte a múltiplos
+dispositivos, adaptação automática das dimensões dos componentes gráficos
+da aplicação, além do uso de \textit{templates} para permitir uma 
+definição centralizada da identidade visual da aplicação.
+Tal recurso de \textit{templates} permite alterar a identidade visual da aplicação facilmente, 
+podendo-se ter \textit{templates} diferentes para tipos de dispositivos diferentes (como TV's e celulares).
+
+Outras aplicações foram desenvolvidas, como o NCLua RSS \textit{Reader} e o Rastreador de Encomendas
+que servem como prova de conceito dos protocolos como HTTP e SOAP, implementados nesta dissertação.
+
+Os objetivos apresentados na Seção \ref{sec:objetivos} foram todos alcançados,
+apresentando uma solução completa, desde o ambiente de desenvolvimento, até 
+a realização de análises de desempenho das aplicações desenvolvidas.
+
+\added{
+A Tabela \ref{tab:obj-espec-alcancados} apresenta uma descrição de como tais objetivos foram alcançados.
+\begin{center}
+	\begin{tabular}{|p{2cm}|p{13cm}|}
+	  \hline 
+		\textbf{Objetivo Específico} & \textbf{Como foi alcançado} \\
+		\hline 
+		A & Os requisitos funcionais e não funcionais foram elicitados, tendo
+		servido de guia para o desenvolvimento da arquitetura proposta; \\
+		\hline 
+		B & a arquitetura foi proposta e desenvolvida, apresentando-se
+		a mesma por meio de figuras e diagramas UML, além da montagem de uma
+		distribuição GNU/Linux contendo todo o ambiente de desenvolvimento elaborado;  \\	
+		\hline 
+		C & um \textit{framework} de comunicação de dados foi desenvolvido, composto
+		pelos módulos NCLua HTTP e NCLua SOAP, que implementam os protocolos HTTP e SOAP, respectivamente,
+		sendo a base de toda a interoperação das aplicações desenvolvidas com diferentes provedores de serviços \textit{Web}; \\
+		\hline 
+		D & as diferentes aplicações de TVDi propostas foram desenvolvidas e apresentadas, servindo como prova
+		de conceito do uso dos \textit{frameworks} desenvolvidos ou estendidos; \\
+		\hline 
+		E & o \textit{framework} LuaOnTV foi estendido, incluindo-se suporte a temas. O recurso
+		de temas foi utilizado na aplicação de \textit{T-Commerce} desenvolvida. 
+		A adaptação automática da interface da aplicação foi testada em ambiente
+		virtual de TV Digital (o Ginga \textit{Virtual Set-top Box}) 
+		com diferentes resoluções de tela. Em tal ambiente, a adaptação automática do tamanho
+		da interface gráfica da aplicação ao tamanho da tela do televisor
+		mostrou-se satisfatória, possibilitando que a aplicação de adapte automaticamente
+		a diferentes dispositivos receptores de TVD; \\
+		\hline 
+		F & um modelo de desenvolvimento de aplicações de TVDi baseado em \textit{templates}
+		foi elaborado e apresentado. Tal modelo foi utilizado na aplicação de \textit{T-Commerce} desenvolvida,
+		o que permitiu uma agilidade no desenvolvimento da mesma, definindo
+		um conjunto de componentes gráficos básicos e uma identidade visual
+		comum a todas as telas da aplicação desenvolvida.\\								
+		\hline 
+	\end{tabular}
+	\captionof{table}{Objetivos Específicos Alcançados}
+	\label{tab:obj-espec-alcancados}
+\end{center}
+}
+
+\section{Trabalhos Futuros}
+
+\input{artigo-nclua-soap-trabs-futuros}
+
+A arquitetura também pode ser estendida nos pontos a seguir:
+
+\begin{itemize}
+	\item incluir suporte a metadados na aplicação para que a
+mesma possa oferecer produtos vinculados
+a um programa televisivo, permitindo que
+a oferta do produto seja mostrada 
+ao telespectador em momento determinado no
+arquivo de metadados, utilizando os recursos
+de sincronização de mídias existente na linguagem NCL;
+   \item estudar a viabilidade e uso do protocolo de autorização \textit{Open Authentication} (oAuth)\footnote{\url{http://oauth.net}},
+que é bastante utilizado atualmente em redes sociais,
+permitindo ao usuário ter um login e senha únicos para acesso a diferentes serviços,
+agilizando o processo de login (caso o usuário decida salvar localmente, de forma criptografada, 
+as informações de autorização);
+   \item estender a arquitetura para um modelo baseado em descoberta de serviços que
+possibilite a integração de diferentes lojas virtuais
+que implementem a arquitetura aqui proposta,
+utilizando recursos como a linguagem BPEL (\textit{Business Process Execution Language})\nomenclature{BPEL}{\textit{Business Process Execution Language}}
+para permitir a composição de serviços e tornar tal integração transparente para aplicação de TVDi;
+  \item utilizar a extensão \textit{WS-Security}\cite{oasis-wssecurity} para permitir a segurança na comunicação entre os \textit{Web Services} e as aplicações cliente;
+  \item criar ferramenta, para execução do lado da emissora de TV, que permita o envio dos produtos em oferta
+  via \textit{broadcast}, possibilitando a usuários, sem conexão com a \textit{Internet}, visualizarem tais produtos
+  na tela de seu equipamento de TVD.
+\end{itemize}
+

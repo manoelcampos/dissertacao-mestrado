@@ -1,0 +1,99 @@
+\documentclass[12pt]{article}
+
+
+\usepackage{sbc-template}
+\usepackage{graphicx,url}
+\DeclareGraphicsExtensions{.jpg,.pdf,.png,.eps}
+\graphicspath{{../images/}}
+
+\usepackage{verbatim} %comentários em bloco \begin{comment}your comment lines\end{comment}
+
+%Altera os títulos (como chapters, sections, references) para português
+%\usepackage[brazil]{babel}   
+\usepackage[brazilian]{babel}
+%permite digitar caracteres acentuados no texto, no lugar de usar códigos
+\usepackage[utf8]{inputenc} 
+%permite copiar texto acentuado no PDF gerado
+\usepackage[T1]{fontenc}
+
+%Permite definir o idioma da bibliografia
+\usepackage[fixlanguage]{babelbib}
+
+\usepackage{graphicx}
+%\usepackage{caption} 
+%----------------
+\usepackage{listings}
+\usepackage{nomencl} %pacote para gerar lista de abreviações - http://franz.kollmann.in/latex/latex.html
+
+%line-numbers, inputencoding=utf8/latin1
+%Define o estilo para listagens de código fonte
+\lstset{
+  numbers=left, %numeração de linhas à esquerda
+  stepnumber=1,
+  firstnumber=1,
+  numberstyle=\tiny,
+  extendedchars=true,
+  frame=none,
+  basicstyle=\footnotesize,
+  stringstyle=\ttfamily,
+  showstringspaces=false,
+  %language=Java, %deve ser definida na inclusão de cada trecho de código, pois podem existir linguagens diferentes em exemplos diferentes
+  breaklines=true,
+  breakautoindent=true,
+  %estilos de comentário de uma e várias linhas
+  morecomment=[l]{--}, morecomment=[s]{/*}{*/}, morecomment=[s]{<!--}{-->}, morecomment=[s]{--[[}{--]]}
+}
+     
+\sloppy
+
+\title{NCLua SOAP: Acesso a \textit{Web Services} a partir de aplicações de TV Digital Interativa}
+
+\author{Manoel Campos da Silva Filho\inst{1}, Paulo Roberto de Lira Gondim\inst{2}}
+
+\address{Coordenação de Informática\\
+  Instituto Federal de Educação, Ciência e Tecnologia do Tocantins (IFTO)\\
+  AE 310 Sul, Av LO 05 S/N, Plano Diretor Sul, 77.021-090, Palmas--TO, Brazil
+  \nextinstitute
+  Departamento de Engenharia Elétrica\\
+  Universidade de Brasília (UnB)\\
+  Campus Universitário Darcy Ribeiro, 70.910-900, Brasília--DF, Brazil
+  \email{mcampos@ifto.edu.br, pgondim@unb.br}
+}
+
+\begin{document} 
+
+\maketitle
+
+\begin{abstract}
+This paper describes the implementation of a module, written entirely in Lua language, to access Web Services in interactive Digital TV applications. Such applications can be developed using NCL and Lua languages for the Ginga-NCL subsystem 
+of the Ginga middleware. 
+The module allows the convergence between Digital TV applications and the Web, 
+the use of existent services in a Digital TV graphical interface, 
+besides the details encapsulation of the HTTP and SOAP protocols.
+\end{abstract}
+     
+\begin{resumo} 
+O presente artigo descreve a implementação de um módulo, escrito inteiramente em linguagem Lua,
+para acesso a \textit{Web Services} em aplicações de TV Digital interativa (TVDi). Tais aplicações
+podem ser desenvolvidas utilizando as linguagens NCL e Lua para o sub-sistema
+Ginga-NCL do middleware Ginga. O módulo permite a convergência entre aplicações de TV Digital e a \textit{Web}, o
+uso de serviços já existentes a partir de uma interface gráfica de TV Digital, além
+do encapsulamento de detalhes dos protocolos HTTP e SOAP.
+\end{resumo}
+
+\section{Introdução} \label{sec:introducao}
+
+\input{artigo-ncluasoap-texto} %input no lugar de include evita a quebra de linha inserida por este
+\input{artigo-ncluasoap-analise}
+
+\section{Conclusão} \label{sec:conclusao}
+\input{artigo-ncluasoap-conclusao}
+\section{Trabalhos Futuros} \label{sec:trabalhos-futuros}
+\input{artigo-nclua-soap-trabs-futuros}
+
+%------------------------------------------------------------------------------------------------------------------
+\selectbiblanguage{brazilian}
+\bibliographystyle{sbc}
+\bibliography{referencias-artigo}
+
+\end{document}

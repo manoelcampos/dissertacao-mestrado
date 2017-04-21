@@ -1,0 +1,115 @@
+\documentclass[12pt]{article}
+
+\usepackage{nomencl} %pacote para gerar lista de abreviações - http://franz.kollmann.in/latex/latex.html
+\usepackage{sbc-template}
+\usepackage{graphicx,url}
+\DeclareGraphicsExtensions{.jpg,.pdf,.png,.eps}
+\graphicspath{{../images/}}
+\usepackage{verbatim} %comentários em bloco \begin{comment}your comment lines\end{comment}
+
+%Altera os títulos (como chapters, sections, references) para português
+%\usepackage[brazil]{babel}   
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}  
+\usepackage[T1]{fontenc}
+
+\usepackage{graphicx}
+%\usepackage{caption}
+\usepackage{hyperref}  
+%----------------
+\usepackage{listings, listingslua}
+
+%Permite fazer controle de alterações (destacando alterações) em documentos tex
+%http://www.ctan.org/tex-archive/macros/latex/contrib/changes
+\usepackage[final]{changes}
+
+%Habilitar o parâmetro final apenas quando for ser gerada a versão final do documento (sem os destaques de alterações).
+%Tal parâmetro deve ser incluído ou removido do \usepackage anterior
+%\usepackage[final]{changes}
+
+%line-numbers, inputencoding=utf8/latin1
+%Define o estilo para listagens de código fonte
+\lstset{
+  numbers=left, %numeração de linhas à esquerda
+  stepnumber=1,
+  firstnumber=1,
+  numberstyle=\tiny,
+  extendedchars=true,
+  frame=none,
+  basicstyle=\footnotesize,
+  stringstyle=\ttfamily,
+  showstringspaces=false,
+  %language=Java, %deve ser definida na inclusão de cada trecho de código, pois podem existir linguagens diferentes em exemplos diferentes
+  breaklines=true,
+  breakautoindent=true,
+  %estilos de comentário de uma e várias linhas
+  morecomment=[l]{--}, morecomment=[s]{/*}{*/}, morecomment=[s]{<!--}{-->}, morecomment=[s]{--[[}{--]]}
+}
+
+\hypersetup {
+pdfmenubar=true,	%Mostrar barra menus
+pdfpagemode=UseNone, %Nenhum modo de páginas
+pdfpagelayout=SinglePage, %Abertura em modo de página simples
+pdffitwindow=true, %Adaptar página à janela
+%
+bookmarksopen=true,
+pdftitle="NCLua SOAP: Acesso a Web Services em aplicações de TVDi",
+pdfauthor="Manoel Campos da Silva Filho and Paulo Roberto de Lira Gondim",
+pdfsubject="WCGE 2011", 
+pdfhighlight=/O, %Efeito ao clicar link
+linkcolor=linkcol, %Cor das ligações internas do documento
+citecolor=citecol, %Cor das referências à bibliografia no texto
+urlcolor=linkcol   %Cor das hiperligações
+}
+     
+\sloppy
+
+\title{NCLua SOAP: Acesso a \textit{Web Services} em aplicações de TVDi}
+
+\author{Manoel Campos da Silva Filho\inst{1,2}, Paulo Roberto de Lira Gondim\inst{2}}
+
+\address{Coordenação de Informática\\
+  Instituto Federal de Educação, Ciência e Tecnologia do Tocantins (IFTO)\\
+  AE 310 Sul, Av LO 05 S/N, Plano Diretor Sul, 77.021-090, Palmas--TO, Brazil
+  \nextinstitute
+  Departamento de Engenharia Elétrica\\
+  Universidade de Brasília (UnB)\\
+  Campus Universitário Darcy Ribeiro, 70.910-900, Brasília--DF, Brazil
+  \email{mcampos@ifto.edu.br, pgondim@unb.br}
+}
+
+\begin{document} 
+
+\maketitle
+
+\begin{abstract}
+This paper presents a Lua module to access Web Services in interactive Digital TV applications (DTVi). Such applications can be developed using NCL and Lua languages for the Ginga-NCL subsystem 
+of the Ginga middleware. 
+The module allows the convergence between DTVi applications and the Web
+and the use of existent services in a DTV graphical interface.
+\end{abstract}
+     
+\begin{resumo} 
+Este artigo apresenta um módulo Lua
+para acesso a \textit{Web Services} em aplicações de TV Digital interativa (TVDi). Tais aplicações
+podem ser desenvolvidas utilizando as linguagens NCL e Lua para o sub-sistema
+Ginga-NCL do middleware Ginga. O módulo permite a convergência entre aplicações de TVDi e a \textit{Web} e o
+uso de serviços já existentes a partir de uma interface gráfica de TVD.
+\end{resumo}
+
+\section{Introdução} \label{sec:introducao}
+
+\input{artigo-ncluasoap-texto} %input no lugar de include evita a quebra de linha inserida por este
+\input{artigo-ncluasoap-analise}
+
+\section{Conclusão} \label{sec:conclusao}
+\input{artigo-ncluasoap-conclusao}
+\section{Trabalhos Futuros} \label{sec:trabalhos-futuros}
+\input{artigo-nclua-soap-trabs-futuros}
+
+%------------------------------------------------------------------------------------------------------------------
+\bibliographystyle{sbc}
+\bibliography{referencias-artigo}
+
+\end{document}

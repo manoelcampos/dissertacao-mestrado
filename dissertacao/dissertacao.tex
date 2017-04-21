@@ -1,0 +1,310 @@
+\documentclass[a4paper,12pt,openright,titlepage,oneside]{book}
+
+%\usepackage[english,brazil]{babel} 
+%define regra de gramática para separar síbalas {babel}
+%e altera os títulos (como chapters, sections, references) para português
+%\usepackage[portuguese,brazil]{babel} 
+%\usepackage[portuges]{babel}
+%Altera os títulos (como chapters, sections, references) para português
+%\usepackage[brazil]{babel}   
+\usepackage[brazilian]{babel}
+%permite digitar caracteres acentuados no texto, no lugar de usar códigos
+\usepackage[utf8]{inputenc} 
+%permite copiar texto acentuado no PDF gerado
+\usepackage[T1]{fontenc}
+
+%Comentários de múltiplas linhas
+%\begin{comment} 
+%blablabla 
+%blabla
+%\end{comment}
+
+%Acesso aos dados do documento como autor, título e data por meio dos comandos \MyAuthor, \MyTitle e \MyDate
+%Download do pacote em http://tug.ctan.org/tex-archive/macros/latex/contrib/authoraftertitle/
+%O mesmo foi extraído na pasta da dissertação
+\usepackage{authoraftertitle}
+
+%Permite fazer controle de alterações (destacando alterações) em documentos tex
+%http://www.ctan.org/tex-archive/macros/latex/contrib/changes
+%\usepackage{changes}
+
+%Habilitar o parâmetro final apenas quando for ser gerada a versão final do documento (sem os destaques de alterações).
+%Tal parâmetro deve ser incluído ou removido do \usepackage anterior
+\usepackage[final]{changes}
+
+
+\usepackage{verbatim} % http://devdaily.com/blog/post/latex/multi-line-comments-in-latex-begin-123-comment-125-verbatim
+
+%permite colocar um determinado trecho de texto em orientação paisagem (landscape)
+%http://texblog.wordpress.com/2007/11/10/landscape-in-latex/
+%uso: \begin{landscape} blablabla \end{landscape}
+\usepackage{lscape}
+
+\usepackage{caption}
+\usepackage{nomencl} %pacote para gerar lista de abreviações - http://franz.kollmann.in/latex/latex.html
+\usepackage{epsfig} %usar formato de figura .eps
+\usepackage[utf8]{inputenc} %definir que vai trabalhar com codificacão utf8 e inputenc -> entrada de acentos normal
+\usepackage{colortbl}
+\usepackage[lmargin=3.0cm, rmargin=2.50cm, tmargin=2.50cm, bmargin=2.50cm]{geometry} %define as margens
+\usepackage{array}
+\usepackage{subfigure}
+\usepackage{amsfonts}
+\usepackage{amstext}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[thmmarks,amsmath]{ntheorem}%\usepackage{amsthm}
+\usepackage{boxedminipage}
+\usepackage{geometry}
+\usepackage{theorem}
+\usepackage{fancybox}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{ifthen}
+\usepackage{multirow}
+\usepackage{times}
+\usepackage{afterpage}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{rotating}
+\usepackage{makeidx}
+\usepackage{indentfirst}
+\usepackage{epigraph}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{setspace}
+\usepackage[notlof,notlot,nottoc]{tocbibind}
+\usepackage{template-FT-UnB/ft2unb}
+
+\usepackage{listings}  
+%\usepackage{listingsutf8} 
+
+
+\sloppy %formata o texto de forma justificado
+
+%----------------DEFINE FORMA CORRETA DE HIFENIZAÇÃO PARA ALGUMAS PALAVRAS ----------------
+\hyphenation{cons-tru-a}
+\hyphenation{e-xem-plo}
+\hyphenation{e-xem-plar}
+\hyphenation{e-le-men-to}
+\hyphenation{e-le-men-tar}
+\hyphenation{ma-nu-al}
+\hyphenation{res-pos-ta}
+\hyphenation{Li-li-ssa-nne}
+\hyphenation{ca-rac-te-ris-ti-ca}
+\hyphenation{ca-rac-te-ris-ti-cas}
+\hyphenation{ca-rac-te-ris-ti-co}
+\hyphenation{ca-rac-te-ris-ti-cos}
+\hyphenation{cor-res-pon-den-ci-as}
+\hyphenation{cons-tru-am}
+\hyphenation{re-a-li-za-da}
+\hyphenation{re-a-li-za-do}
+\hyphenation{re-a-li-za-das}
+\hyphenation{re-a-li-za-dos}
+\hyphenation{i-ne-xis-ten-cia}
+\hyphenation{i-ne-xis-te}
+\hyphenation{e-xis-te}
+\hyphenation{di-fe-ren-te}
+\hyphenation{di-fe-ren-tes}
+\hyphenation{dei-xan-do}
+\hyphenation{ins-ta-la-do} 
+\hyphenation{ins-ta-la-dos} 
+\hyphenation{ins-ta-la-da}
+\hyphenation{ins-ta-la-das}
+\hyphenation{re-gis-tra-do}
+\hyphenation{re-gis-tra-dos}
+\hyphenation{re-gis-tra-da}
+\hyphenation{re-gis-tra-das}
+\hyphenation{des-cre-ve}
+\hyphenation{res-pei-to}
+\hyphenation{re-a-li-za}
+\hyphenation{re-a-li-zar}
+\hyphenation{a-tu-a-li-zar}
+\hyphenation{a-tu-a-li-zan-do}
+\hyphenation{a-tu-a-li-za-do}
+\hyphenation{a-tu-a-li-za-da}
+\hyphenation{fun-ci-o-na-li-da-de}
+\hyphenation{pos-si-bi-li-da-de}
+\hyphenation{dis-po-si-ti-vo}
+\hyphenation{dis-po-si-ti-vos}
+\hyphenation{e-xis-te}
+\hyphenation{e-xis-tir}
+\hyphenation{des-co-ber-ta}
+\hyphenation{des-co-ber-to}
+\hyphenation{de-sig-nar}
+\hyphenation{de-sig-na-do}
+\hyphenation{o-pe-ra-ci-o-nais} 
+\hyphenation{o-pe-ra-ci-o-nal}
+\hyphenation{con-si-de-ra-do}
+\hyphenation{con-si-de-ra-dos}
+\hyphenation{ou-tro}
+\hyphenation{ou-tra}
+\hyphenation{ou-tros}
+\hyphenation{ou-tras}
+\hyphenation{e-xis-ten-te}
+\hyphenation{e-xis-ten-tes}
+\hyphenation{LuaOnTV}
+\hyphenation{De-fi-ni-tion}
+%------------------------------------------------------------------------------------------
+
+\usepackage{hyperref}
+\usepackage{url}
+
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.jpg,.pdf,.mps,.png,.gif,.eps}
+\graphicspath{{../images/}} %define diretório de imagens
+
+%% Define a new 'leo' style for the package that will use a smaller font.
+\makeatletter
+\def\url@leostyle{%
+  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\ttfamily}}}
+\makeatother
+%% Now actually use the newly defined style.
+\urlstyle{leostyle}
+
+% Existe outra diretiva, mais abaixo, que define outro estilo, de nome abnt-num
+% O uso de mais de um estilo está gerando um warning na compilação.
+% \bibliographystyle{plain} 
+
+%line-numbers, inputencoding=utf8/latin1
+%Define o estilo para listagens de código fonte
+\lstset{
+  numbers=left, %numeração de linhas à esquerda
+  stepnumber=1,
+  firstnumber=1,
+  numberstyle=\tiny,
+  extendedchars=true,
+  frame=none,
+  basicstyle=\footnotesize,
+  stringstyle=\ttfamily,
+  showstringspaces=false,
+  %language=Java, %deve ser definida na inclusão de cada trecho de código, pois podem existir linguagens diferentes em exemplos diferentes
+  breaklines=true,
+  breakautoindent=true,
+  %estilos de comentário de uma e várias linhas
+  morecomment=[l]{--}, morecomment=[s]{/*}{*/}, morecomment=[s]{<!--}{-->}, morecomment=[s]{--[[}{--]]}
+}
+
+
+%\begin{tabular}{>{\raggedright}p{0.18\linewidth}>{\raggedright}p{0.38\linewidth}>{\raggedright\arraybackslash}p{0.38\linewidth}}
+
+\makenomenclature %Necessário para gerar lista de siglas
+
+\title{Arquitetura orientada a serviços para comércio eletrônico no Sistema Brasileiro de TV Digital}
+\titulolinhai{Arquitetura orientada a serviços}
+\titulolinhaii{para comércio eletrônico no}
+\titulolinhaiii{Sistema Brasileiro de TV Digital}
+
+\author{Manoel Campos da Silva Filho}
+\autori{Manoel Campos da Silva Filho}
+\autorendereco{Universidade de Brasília, Faculdade de Tecnologia, Departamento de Engenharia Elétrica, 70910-900, Brasília-DF, Brasil.}
+
+\grau{Mestre}
+\area{Engenharia Elétrica}  
+\siglaarea{ENE}
+\tipodemonografia{Dissertação}
+\programa{Mestrado}
+
+\date{2011-06-16} %data da defesa
+\dia{16}\mes{Junho}\ano{2011}
+
+\numpublicacao{439/2011}
+\siglapublicacao{PPGENE.DM}%Programa de Pós Graduação em ENgenharia Elétrica.Dissertação de Mestrado
+\totalpgs{107}
+
+\membrodabancai{Prof. Dr. Paulo Roberto de Lira Gondim, ENE/UnB}
+\membrodabancaifuncao{Orientador}
+\membrodabancaii{Prof. Dr. Divanilson Rodrigo Campelo, ENE/UnB}
+\membrodabancaiifuncao{Examinador interno}
+\membrodabancaiii{Prof. Dr. Díbio Leandro Borges, CIC/UnB}
+\membrodabancaiiifuncao{Examinador externo}
+
+\begin{document}
+
+\pdfbookmark[0]{Agradecimentos}{agradecimentos}\include{agradecimentos}
+\include{resumo}
+
+\pdfbookmark[0]{Sumário}{sumario}\sumario
+\pdfbookmark[0]{Lista de Figuras}{listafiguras}\listadefiguras
+\pdfbookmark[0]{Lista de Tabelas}{listatabelas}\listadetabelas
+\pdfbookmark[0]{Lista de Códigos Fonte}{listacodigosfonte}\listadecodigosfonte
+
+%\renewcommand{\nomname}{LISTA DE TERMOS E SIGLAS} %Define um caption à lista de siglas
+%Inclui a lista de siglas 
+%Para alterar a palavra "Nomenclature" adicionada como título para a lista de siglas, 
+%edite o arquivo /usr/share/texmf-texlive/tex/latex/nomencl/nomencl.sty
+%alterando a linha \def\nomname{Nomenclature} para, por exemplo, \def\nomname{Siglas},
+%ou mais facilmente, incluindo o comando \renewcommand{\nomname}{SIGLAS} antes de incluir a lista de siglas no documento tex
+\pdfbookmark[0]{Lista de Termos e Siglas}{nomenclatura}\printnomenclature[2.5cm] 
+
+\mainmatter %Inicia a numeracao normal cardinal
+\setcounter{page}{1} \pagenumbering{arabic} \pagestyle{plain}
+
+\chapter{Introdução} \label{cap:introducao}
+\input{introducao} %input no lugar de include evita a quebra de linha inserida por este
+
+\input{objetivos} %input no lugar de include evita a quebra de linha inserida por este
+\include{justificativa}
+\include{metodologia}
+\input{organizacao}
+
+\chapter{Revisão bibliográfica} \label{cap:revisao-bib}
+\input{commerce}
+\input{sbtvd} %input no lugar de include evita a quebra de linha inserida por este
+%Especificações do padrão de WS
+\input{web-services} %input no lugar de include evita a quebra de linha inserida por este
+
+%Descoberta de Serviços
+%input no lugar de include evita a quebra de linha inserida por este
+%\input{novel-interoperable-model-distributed-uddi}
+%\include{active-ws-registry}
+%\include{new-description-model-ws}
+%\include{finding-ws}
+%\include{quality-driven-ws-discovery}
+%\include{semantic-web-service-offer-discovery}
+%\include{comparacao-descoberta-servicos}
+
+%WS em TVD
+%input no lugar de include evita a quebra de linha inserida por este
+%\input{providing-mobile-vws}
+%\input{descoberta-servicos-tvd}
+
+%E-Commerce/Security
+%input no lugar de include evita a quebra de linha inserida por este
+%\include{e-commerce-security}
+%\include{privacy-in-e-commerce}
+%\include{reputation-oriented-trustworthy-e-commerce}
+%\include{ws-composition}
+
+%\include{web-service-conversation-modeling}
+%\include{aceitacao-de-uso}
+
+
+\include{arquitetura-tcommerce}
+
+\include{luaontv}
+
+\chapter{Framework de comunicação de dados} \label{cap:ncluasoap}
+
+A arquitetura apresentada no Capítulo \ref{cap:arquitetura-tcommerce}
+utiliza protocolos de comunicação HTTP e SOAP. Tais protocolos foram
+implementados em um \textit{framework} de comunicação a ser apresentado neste capítulo.
+
+\section{Integração entre \textit{Web} e TV}
+\input{artigo-ncluasoap-texto} %input no lugar de include evita a quebra de linha inserida por este
+\input{artigo-ncluasoap-analise}
+
+\include{conclusao}
+
+%\bibliographystyle{abnt-num} % use este estilo para ABNT numerico
+\bibliographystyle{abnt-alf} % use este estilo para ABNT alfabético
+%\bibliographystyle{sbc}
+
+%\renewcommand{\bibname}{REFERÊNCIAS BIBLIOGRÁFICAS} %Define o Caption da seção de bibliografia
+%\addcontentsline{toc}{chapter}{REFERÊNCIAS BIBLIOGRÁFICAS} %????????????????????
+
+%não pode ter espaço entre os nomes dos arquivos bib
+\bibliography{referencias,referencias-artigo}
+
+\include{apendice}
+
+\end{document}

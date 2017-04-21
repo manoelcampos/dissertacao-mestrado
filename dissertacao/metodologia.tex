@@ -1,0 +1,60 @@
+\section{Metodologia} \label{sec:metodologia}
+
+Para o desenvolvimento da presente dissertação foi feito um levantamento bibliográfico
+sobre as tecnologias, linguagens, ferramentas e trabalhos relacionados para nortear
+a implementação da arquitetura e solução proposta.
+
+O projeto, análise e desenvolvimento da solução seguiu o
+processo de desenvolvimento em cascata juntamente com o processo de componentização\cite{sommerville2011soft}.
+O processo em cascata foi adotado pois os requisitos estavam bem definidos, havendo \replaced{pequena}{pouca} probabilidade de mudanças radicais.
+Já o processo de componentização foi também adotado devido ao uso de alguns componentes reutilizáveis
+(como \textit{Web Services} próprios e de terceiros) realizando a integração destes diversos
+componentes.
+
+No processo de desenvolvimento em cascata, foram seguidas as seguintes etapas:
+\begin{itemize}
+	\item especificação de requisitos - foram definidos os requisitos funcionais e não funcionais, que são apresentados ao longo do trabalho;
+	\item projeto - foi adotado o paradigma de Orientação a Objetos (OO)\nomenclature{OO}{Orientação a Objetos}, utilizando-se a \textit{Unified Modeling Language} (UML)\nomenclature{UML}{\textit{Unified Modeling Language}} para modelagem, com o auxílio de ferramenta CASE (\textit{Computer-Aided Software Engineering})\nomenclature{CASE}{\textit{Computer-Aided Software Engineering}};
+	\item implementação - a implementação seguiu o paradigma OO, conforme definido na fase de projeto;
+	\item testes - foram feitos testes de interoperabilidade/integração para verificar se os componentes
+	da arquitetura estavam se comunicando conforme o esperado.
+\end{itemize}
+
+
+Optou-se, para o desenvolvimento do projeto, pelo paradigma de orientação a objetos pois o mesmo 
+permite um alto grau de reutilização de código, tornando o mesmo mais organizado
+e fácil de manter.
+
+Para a comunicação entre os componentes da arquitetura da solução, foi escolhido o protocolo de comunicação SOAP, uma vez que a aplicação de TV Digital desenvolvida
+faz parte de uma arquitetura distribuída e precisa realizar comunicação 
+com servidores \textit{Web} por meio da \textit{Internet}. Assim, foi preciso usar um protocolo
+que não tivesse problemas de bloqueio em \textit{firewalls}. Desta forma, o protocolo SOAP foi escolhido
+também por ser padrão do \textit{World Wide Web Consortium} (W3C)\nomenclature{W3C}{\textit{World Wide Web Consortium}}.
+
+Para as aplicações de TV Digital, foi escolhido o sub-sistema Ginga-NCL do \textit{middleware} Ginga
+do Sistema Brasileiro de TV Digital (SBTVD)\nomenclature{SBTVD}{Sistema Brasileiro de TV Digital},
+devido à grande quantidade de documentos, fóruns de discussão, ferramentas e exemplos disponíveis
+em relação à outra vertente de desenvolvimento utilizando a linguagem Java no sub-sistema Ginga-J.
+Considerando-se ainda que o Ginga-NCL é o único sub-sistema obrigatório para dispositivos móveis,
+isto foi decisivo para a escolha, pois assim, a arquitetura e as aplicações desenvolvidas
+podem, em tese, ser executadas em receptores (conversores/\textit{Set-bop Boxes}) de TV Digital fixos, móveis ou portáteis.
+
+Com a escolha do Ginga-NCL, foi necessária a implementação do protocolo SOAP para este sub-sistema,
+utilizando-se a linguagem Lua, uma vez que o primeiro só disponibiliza protocolos até a camada de transporte
+do modelo OSI/ISO, como o TCP. Com isto, foi necessário realizar testes de interoperabilidade
+entre aplicações de TV Digital desenvolvidas com as linguagens NCL e Lua e \textit{Web Services}
+desenvolvidos em diferentes plataformas e linguagens, pois um dos grandes benefícios
+do protocolo SOAP é a integração de sistemas heterogêneos. Assim, tais testes foram
+necessários para garantir esta interoperabilidade.
+
+Os requisitos da aplicação foram levantados tomando por base as funcionalidades
+existentes na grande maioria dos \textit{Web sites} de comércio eletrônico
+disponíveis na \textit{Internet} e bastante difundidos no Brasil.
+
+Para a construção da interface de usuário das aplicações de TV Digital, optou-se pela utilização
+do \textit{framework} LuaOnTV para abstrair as primitivas gráficas para renderização da interface.
+A mesma foi projetada baseada em recursos de \textit{templates}, o que permite a personalização
+e adaptação automática para diferentes resoluções de tela, tendo sido estendido
+o LuaOnTV para incluir tais recursos.
+
+
