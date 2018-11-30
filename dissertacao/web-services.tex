@@ -16,7 +16,7 @@ A Figura \ref{fig:tree-tiers-app} apresenta uma arquitetura de um sistema distri
 	\item Camada de Apresentação: pode contar tanto com aplicações \textit{desktop} leves, conhecidas como \textit{thin client} (cliente magro/leve),
   possuindo apenas uma interface gráfica que faz acesso a um servidor de aplicação, por meio de chamadas de procedimento remoto; quanto com um \textit{browser}, que faz acesso a um servidor \textit{Web}, responsável por gerar as interfaces HTML.
   \item Camada \textit{Web}: composta por um ou mais servidores \textit{Web}, responsáveis por gerar a interface HTML para os clientes \textit{Web}. As aplicações \textit{desktop} não acessam esta camada, tendo ligação direta com a Camada de Aplicação. 
-  \item Camada de Aplicação: composta por um ou mais servidores de aplicação onde as regras de negócios da aplicação estão implementadas. Desta forma, alterações na lógica de negócios não requer a atualização dos clientes. Os servidores de aplicação adicionam tolerância a falhas e balanceamento de cargo ao sistema.
+  \item Camada de Aplicação: composta por um ou mais servidores de aplicação onde as regras de negócios da aplicação estão implementadas. Desta forma, alterações na lógica de negócios não requer a atualização dos clientes. Os servidores de aplicação adicionam tolerância a falhas e balanceamento de carga ao sistema.
   \item Camada de Dados: composta por um ou mais servidores de banco de dados, acessíveis apenas pelos servidores de aplicação, o que garante transparência e independência de banco de dados aos clientes.
 \end{itemize}
 
@@ -233,9 +233,9 @@ que tenhamos sucesso no uso de um determinado serviço.
 Para isto, existe a \textit{Web Service Description Language} (WSDL)\nomenclature{WSDL}{\textit{Web Service Description Language}}, 
 uma linguagem também baseada em XML. Um documento WSDL descreve
 a interface de um WS, permitindo que as aplicações
-que consumirão o serviço disponibilizado saibam quais informações
-devem incluir dentro de um envelope SOAP, para chamar
-um determinado procedimento remoto, disponibilizado pelo WS.
+que consumirão o serviço disponibilizado, saibam quais informações
+devem incluir dentro de um envelope SOAP. Desta forma, podem chamar
+um determinado procedimento remoto disponibilizado pelo WS.
 O WSDL descreve um WS como uma coleção de \textit{end points}
 que podem trocar certas mensagens \cite{curbera2002unraveling}. Um \textit{end point} é um
 elemento no WSDL que define a ligação entre a definição de um 
@@ -417,9 +417,9 @@ concretas para realização da vinculação da aplicação cliente com o endere�
 Para usuários e desenvolvedores, o WSDL provê uma descrição formal das interações cliente/servidor.
 Desenvolvedores podem usar o documento WSDL como entrada para uma aplicação que gere 
 funções \textit{proxy}\footnote{Tais funções \textit{proxy} são escritas ou geradas
-na linguagem utilizada pela aplicação cliente (que consome o \textit{Web Service}) e possuem
+na linguagem utilizada pela aplicação cliente (que consome o \textit{Web Service}). Elas possuem
 a mesma assinatura dos métodos remotos, tornando transparente para o cliente a chamada
-aos métodos no WS, sendo responsáveis por gerar o envelope SOAP para enviar ao
+aos métodos no WS. São responsáveis por gerar o envelope SOAP para enviar ao
 servidor onde o WS é hospedado.},
 utilizadas no cliente, para acesso aos métodos do WS. Tais funções \textit{proxy}
 também podem ser geradas dinamicamente, em tempo de execução, por rotinas implementadas
@@ -431,7 +431,7 @@ envolvida no processo de chamada dos métodos remotos.
 
 As especificações do \textit{Universal Description, Discovery and Integration} (UDDI)\nomenclature{UDDI}{\textit{Universal Description, Discovery and Integration}} oferecem aos usuários uma forma sistemática e unificada para encontrar provedores
 de serviços através de um registro centralizado de serviços, que é, grosseiramente,
-equivalente a uma "lista telefônica"  automatizada \textit{online} de WSs \cite{curbera2002unraveling}.
+equivalente a uma "lista telefônica" \textit{online} de WSs \cite{curbera2002unraveling}.
 O \textit{UDDI Business Registry} (UBR)\nomenclature{UBR}{\textit{UDDI Business Registry}}, acessível por meio de um \textit{browser}, foi
 disponibilizado pouco tempo após a especificação se tornar pública, no entanto, o mesmo foi descontinuado
 em 2005\footnote{\url{http://uddi.microsoft.com/about/FAQshutdown.htm}} \cite{treiber2007active}.

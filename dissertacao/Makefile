@@ -1,5 +1,5 @@
 FILE=dissertacao
-TEMP_FILE_EXTENSIONS=log aux lol lof loc soc lot bit idx glo bbl brf nlo nls ilg toc ind out blg synctex.gz snm nav dvi tdo spl
+TEMP_FILE_EXTENSIONS=log aux lol lof loc soc lot bit idx glo bbl brf nlo nls ilg toc ind out blg synctex.gz snm nav dvi tdo thm spl
 all: clean build
 
 build: 
